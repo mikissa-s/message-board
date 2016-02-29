@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Sample</title>
-    <!-- BootstrapのCSS読み込み -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- jQuery読み込み -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- BootstrapのJS読み込み -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </head>
-  
-  <div class="panel panel-default">
+<div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
   </div>
@@ -26,7 +11,6 @@
     <% end %>
   </div>
 </div>
-
 
 <%= form_for(@message) do |f| %>
   <% if @message.errors.present? %>
@@ -48,13 +32,4 @@
   内容:
   <%= f.text_field :body %>
   <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
-  
-  <div class="form-group">
-    <div class="col-sm-2"></div>
-      <div class="col-sm-6">
-        <%= f.submit class: "btn btn-sm btn-primary" %>
-      </div>
-    <div class="col-sm-4"></div>
-  </div>
 <% end %>
