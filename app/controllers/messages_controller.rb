@@ -9,10 +9,10 @@ before_action :set_message, only: [:edit, :update, :destroy]
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to root_path , notice: t(:create)
+      redirect_to root_path , notice: 'メッセージを保存しました'
     else
       @messages = Message.all
-      flash.now[:alert] = t(:create_faild)
+      flash.now[:alert] = "メッセージの保存に失敗しました。"
       render 'index'
     end
   end
@@ -22,7 +22,7 @@ before_action :set_message, only: [:edit, :update, :destroy]
   
   def update
     if @message.update(message_params)
-      redirect_to root_path , notice: t(:update)
+      redirect_to root_path , notice: 'メッセージを編集しました'
     else
       render 'edit'
     end
@@ -30,7 +30,7 @@ before_action :set_message, only: [:edit, :update, :destroy]
   
   def destroy
     @message.destroy
-    redirect_to root_path, notice: t(:destroy)
+    redirect_to root_path, notice: 'メッセージを削除しました'
   end
 
   private
